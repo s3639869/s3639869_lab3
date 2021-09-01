@@ -80,15 +80,28 @@ public class VideoStore {
 		Scanner myScanner = new Scanner(System.in);
 		String customerType = myScanner.nextLine();
 		Customer firstCustomer = CustomerFactory.createCustomer(customerType);
-		System.out.println("First customer is: "+firstCustomer+" of type "+firstCustomer.getClass().getSimpleName());
+
+		if(firstCustomer!=null){
+			System.out.println("First customer is: "+firstCustomer+" of type "+firstCustomer.getClass().getSimpleName());
+		}else{
+			System.out.println("First customer is null!");
+		}
 
 		customerType = myScanner.nextLine();
 		Customer secondCustomer = CustomerFactory.createCustomer(customerType);
-		System.out.println("Second customer is: "+secondCustomer+" of type "+secondCustomer.getClass().getSimpleName());
+		if(secondCustomer!=null){
+			System.out.println("Second customer is: "+secondCustomer+" of type "+secondCustomer.getClass().getSimpleName());
+		}else{
+			System.out.println("Second customer is null!");
+		}
 
 		customerType = myScanner.nextLine();
 		Customer thirdCustomer = CustomerFactory.createCustomer(customerType);
-		System.out.println("Third customer is: "+thirdCustomer+" of type "+thirdCustomer.getClass().getSimpleName());
+		if(thirdCustomer!=null){
+			System.out.println("Third customer is: "+thirdCustomer+" of type "+thirdCustomer.getClass().getSimpleName());
+		}else {
+			System.out.println("Third customer is null!");
+		}
 	}
 
 }
