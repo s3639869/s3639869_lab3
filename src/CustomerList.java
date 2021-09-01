@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
-public class CustomerList {
+public class CustomerList implements MyIterator{
 	private ArrayList<Customer> theList;
+	int currentCustomer = 0;
 	
 	public CustomerList() {
 		this.theList = new ArrayList<Customer>();
@@ -29,5 +30,19 @@ public class CustomerList {
 		}
 		this.theList.add(cust);
 		return true;
+	}
+
+	@Override
+	public boolean hasNext() {
+		if(currentCustomer >= theList.size()){
+			currentCustomer = 0;
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public Object next() {
+		return theList.get(currentCustomer++);
 	}
 }
